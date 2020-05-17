@@ -26,7 +26,7 @@ class KeyPairsControllerTest < ActionDispatch::IntegrationTest
     assert_equal key_pair.private_key, json['private_key']
 
     ping = Time.now
-    get "/api/#{@secret}/key_pairs/#{json['public_key']}"
+    get "/api/#{@secret}/key_pairs/#{json['public_key']}.json"
     pong = Time.now
 
     assert_equal (pong-ping).round, 5

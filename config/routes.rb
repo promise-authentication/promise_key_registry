@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'application#index'
 
   resources :api do
-    resources :key_pairs, constraints: { id: /.+/ }, only: [:show, :create]
+    resources :key_pairs, constraints: { id: /.+\.json/ }, only: [:show, :create]
   end
 end

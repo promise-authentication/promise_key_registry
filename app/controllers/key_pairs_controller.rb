@@ -9,7 +9,7 @@ class KeyPairsController < ApplicationController
 
   def show
     sleep(5)
-    key_pair = KeyPair.find_by_public_key(params[:id])
+    key_pair = KeyPair.find_by_public_key(params[:id].gsub(/\.json$/, ''))
 
     render json: key_pair
   end
