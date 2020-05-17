@@ -8,4 +8,10 @@ class KeyPair < ApplicationRecord
     )
   end
 
+  def attributes
+    {
+      public_key: nil,
+      private_key: nil
+    }
+  end
 end

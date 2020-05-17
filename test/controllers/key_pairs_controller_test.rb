@@ -24,6 +24,7 @@ class KeyPairsControllerTest < ActionDispatch::IntegrationTest
     json = JSON.parse(response.body)
     assert_equal key_pair.public_key, json['public_key']
     assert_equal key_pair.private_key, json['private_key']
+    assert_equal ['public_key', 'private_key'].sort, json.keys.sort
 
     ping = Time.now
     get "/api/#{@secret}/key_pairs/#{json['public_key']}.json"
