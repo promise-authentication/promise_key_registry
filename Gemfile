@@ -43,8 +43,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "pg", "~> 1.2"
 
-gem "appengine", "~> 0.5.0"
-
 gem "rbnacl", "~> 7.1"
 
-gem "google-cloud-secret_manager", "~> 0.4.1"
+gem 'airbrake'
