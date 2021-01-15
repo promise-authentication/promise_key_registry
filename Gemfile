@@ -32,7 +32,7 @@ group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
 
-  gem 'listen', '~> 3.3'
+  gem 'listen', '~> 3.4'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
