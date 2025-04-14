@@ -1,0 +1,18 @@
+networks:
+  promise-network:
+    external: true
+
+services:
+  promise_kms:
+    build: .
+    command: bash -c "bundle exec rails db:migrate; bundle exec rails server -b 0.0.0.0"
+    stdin_open: true
+    environment:
+      RAILS_ENV: development
+      API_SECRET: secret
+    volumes:
+      - .:/app
+    ports:
+      - "3004:3000"  # Using 3004 to avoid conflict with promise_authentication's 3003
+    networks:
+      - promise-network
