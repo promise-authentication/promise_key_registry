@@ -5,7 +5,8 @@ networks:
 services:
   promise_kms:
     build: .
-    command: bash -c "bundle exec rails db:migrate; bundle exec rails server -b 0.0.0.0"
+    restart: unless-stopped
+    command: bash -c "rm /app/tmp/pids/server.pid; bundle exec rails db:migrate; bundle exec rails server -b 0.0.0.0"
     stdin_open: true
     environment:
       RAILS_ENV: development
